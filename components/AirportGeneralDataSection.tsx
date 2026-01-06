@@ -11,25 +11,40 @@ const TABS = [
   "AirNav Indonesia",
 ]
 
-export default function DataUmumBandara() {
+export default function AirportGeneralDataSection() {
   const [activeTab, setActiveTab] = useState(TABS[0])
 
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-10">
       <Container>
 
-        {/* MAIN CARD */}
-        <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-8">
+        <div className="rounded-2xl border border-neutral-200 bg-neutral-100 p-8 md:p-10">
 
           {/* HEADER */}
-          <div className="mb-8">
-            <h2 className="text-2xl font-semibold text-neutral-900">
-              Data Umum Bandar Udara
-            </h2>
-            <p className="mt-2 max-w-3xl text-sm text-neutral-600">
-              Informasi umum dan karakteristik operasional Bandar Udara
-              Sultan Muhammad Kaharuddin.
-            </p>
+          <div className="mb-8 flex items-start gap-4 max-w-3xl">
+            {/* ICON */}
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#003A8F]/10">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                className="h-6 w-6 text-[#003A8F]"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M8 7h8M8 11h8M8 15h5" />
+              </svg>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold text-neutral-900">
+                Data Umum Bandar Udara
+              </h2>
+              <p className="mt-2 text-sm text-neutral-600">
+                Informasi umum dan karakteristik operasional Bandar Udara
+                Sultan Muhammad Kaharuddin.
+              </p>
+            </div>
           </div>
 
           {/* TABS */}

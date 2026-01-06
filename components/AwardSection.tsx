@@ -21,7 +21,7 @@ const AWARDS = [
 
 export default function AwardSection() {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-10">
       <Container>
 
         {/* OUTER CARD */}

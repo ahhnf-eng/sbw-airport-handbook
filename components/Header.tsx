@@ -34,7 +34,9 @@ export default function Header() {
   const pathname = usePathname()
 
   const isProfilActive =
-  pathname === "/tim-kami" || pathname === "/tata-usaha"
+  pathname === "/profil" ||
+  pathname.startsWith("/tim-kami") ||
+  pathname.startsWith("/tata-usaha")
 
   const [isProfilOpen, setIsProfilOpen] = useState(false)
   const profilRef = useRef<HTMLDivElement>(null)
@@ -104,18 +106,21 @@ export default function Header() {
               type="button"
               onClick={() => setIsProfilOpen((prev) => !prev)}
               className={`
-                flex items-center gap-1 pb-1 transition-colors font-medium
+                relative flex items-center gap-1 pb-1 transition-all
                 ${
-                  isProfilActive || isProfilOpen
-                    ? "text-neutral-900"
+                  isProfilActive
+                    ? "text-neutral-900 font-bold"
                     : "text-neutral-700 hover:text-neutral-900"
                 }
               `}
             >
               Profil
               <ArrowIcon open={isProfilOpen} />
-            </button>
 
+              {isProfilActive && (
+                <span className="absolute left-0 -bottom-0.5 h-[2px] w-full bg-neutral-900" />
+              )}
+            </button>
 
             {/* DROPDOWN */}
             <div
